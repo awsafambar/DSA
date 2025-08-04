@@ -1,0 +1,23 @@
+Here's a slightly optimized version:
+just no need of extra for loop and so dp(k+1 %3).
+
+Time complexity and all it will be still O(n)*3*2 here 
+and in my problem it will be O(n)*3*3
+
+Space complexity will O(n)+O(n)[temp storage for inside for but needed]
+
+function maximumPoints(arr) {
+    let dp = [...arr[0]];
+    
+    for (let i = 1; i < arr.length; i++) {
+        const newDp = [];
+        // For each activity today
+        for (let k = 0; k < 3; k++) {
+            // The maximum points if we do activity k today is:
+            // today's points for k + max of the other two activities from yesterday
+            newDp[k] = arr[i][k] + Math.max(dp[(k + 1) % 3], dp[(k + 2) % 3]);
+        }
+        dp = newDp;
+    }
+    return Math.max(...dp);
+}

@@ -1,0 +1,29 @@
+atmost 2 ways. 
+1. when a person stays single and join dance
+2. join dance in couple
+
+suppose there are already a 3 people exist 
+so their combination would be
+{P1, P2, P3}, {{P1, P2}, P3},
+{{P1, P3}, P2} and {{P2, P3}, P1}.
+
+Now another person wanna join let p4 
+so first if he join with single then that person will form a 
+single connection with all existing results i.e.
+{P1, P2, P3, P4}, {{P1, P2}, P3, P4},
+{{P1, P3}, P2, P4} and {{P2, P3}, P1, P4}. 
+i.e. same as result of dp[3]
+
+
+AND when he will join in couple then P4 the p4 will join either
+couple with P1 or p2 or p3 like 
+if P1 then
+{{p4,p1}, rest of two results}
+if p2 then
+{{p4,p2}, rest of two results}
+if p3 then
+{{p4,p3}, rest of two results}
+that means  (4-1) * dp[4-2]
+
+so total dp[4]= dp[3] + (3 * dp[2])
+i.e. dp[n] = dp[n-1] + ((n-1)*dp[n-2])

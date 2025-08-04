@@ -1,0 +1,1 @@
+Robbery on non adjacent house problem is also similar and can be solved same way

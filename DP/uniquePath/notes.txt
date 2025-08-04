@@ -1,0 +1,29 @@
+{
+  i: 0,
+  cur: [
+    1, 1, 1, 1,
+    1, 1, 1
+  ]
+}
+{
+  i: 1,
+  cur: [
+    1, 2, 3, 4,
+    5, 6, 7
+  ]
+}
+{
+  i: 2,
+  cur: [
+     1,  3,  6, 10,
+    15, 21, 28
+  ]
+}
+
+first empty row = 0
+keep left value =1
+
+time complexity (m+1)*n-1
+m+1 for extra empty top row
+
+space 0(2n)
