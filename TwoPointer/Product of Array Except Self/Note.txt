@@ -1,0 +1,15 @@
+i feel divison is the easiest one.
+simply precalculate the product and divide the number on each loop and keep the count of 0.
+if(0's >1 ) 
+simply return empty array
+if(0's==1)
+simply return empty array with zero value Index as totalMultiply
+
+else
+return array dividing each number with totalMultiply
+
+BUT THIS APPORACH IS NOT BEST AS PER DEEP SEEK.
+
+Separate handling is not good so better logic that each place i.e. ith position like at position 4 of total 
+array length 9 then 
+value[4] = prefixMul[4] * suffixMul[4]

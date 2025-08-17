@@ -1,0 +1,12 @@
+follow left and right.
+
+keep in mind that maximum water between 0 and 7th position will be
+Min(height(0),height(7)) * 7(width)
+so dont go from i =0 and all
+follow from wide length.
+lef=0 and right = n-1
+
+
+no need of leftMax and rightMax as we don't need the trapped water
+
+//just keep in mind leftwater and rightwater
