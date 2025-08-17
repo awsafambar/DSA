@@ -1,32 +1,3 @@
-{
-  i: 0,
-  cur: [
-    1, 1, 1, 1,
-    1, 1, 1
-  ]
-}
-{
-  i: 1,
-  cur: [
-    1, 2, 3, 4,
-    5, 6, 7
-  ]
-}
-{
-  i: 2,
-  cur: [
-     1,  3,  6, 10,
-    15, 21, 28
-  ]
-}
-
-first empty row = 0
-keep left value =1
-
-time complexity (m+1)*n-1
-m+1 for extra empty top row
-
-
 optimised way
 Understanding the Problem
 We have a robot on an m x n grid. The robot starts at the top-left corner (grid[0][0]) and wants to reach the bottom-right corner (grid[m-1][n-1]). The robot can only move right or down at any point in time. We need to find the number of unique paths the robot can take to reach the destination.
