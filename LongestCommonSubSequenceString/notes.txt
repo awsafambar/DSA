@@ -1,0 +1,3 @@
+subsequence means like abc subsequence is abc, a, b, c, ac but not ca. Order should be maintained.
+
+if it matches increase the index and see remaining and if doesn't match the character then either i+1 of j+1

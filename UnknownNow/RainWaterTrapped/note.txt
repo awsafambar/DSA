@@ -1,0 +1,16 @@
+To remember Efficient solution just remember two things
+1. solution will be sum of each value of water tarpped which can be calculated using leftMax and right Max.
+    you have to know the leftMax and rightMax at each point. 
+2. either water will be tarpped left or water will be trapped right.
+    if(height[left]<height[right]) // left trapped possible 
+        only possible if leftMax is lower than height[left]
+
+    else
+    same for right Water Trapped.
+
+    do it till left < right.
+
+    simple.
+
+    // May be need to revist
+    
