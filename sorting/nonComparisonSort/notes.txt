@@ -1,0 +1,34 @@
+Why backward loop in Radix Sort?
+
+Let's finally create the problematic case. 
+Let's say the array is [109, 209, 305] after the 
+1s place sort. Their 1s digits are 9, 9, 5. 
+A stable sort kept 109 before 209.
+Now we sort by the 10s place:
+
+10s digits:
+109 → 0
+209 → 0 // ❗️Both have the same 10s digit!
+305 → 0 // ❗️Three-way tie!
+
+Now the countArr for digit 0 will be 3. The cumulative count for digit 0 is 3.
+
+Forward Loop Process (UNSTABLE):
+i = 0: Process 109 (digit 0)
+output[3 - 1] = output[2] = 109
+count[0] becomes 2
+
+i = 1: Process 209 (digit 0)
+output[2 - 1] = output[1] = 209
+count[0] becomes 1
+
+i = 2: Process 305 (digit 0)
+output[1 - 1] = output[0] = 305
+count[0] becomes 0
+
+Final Output: [305, 209, 109] ❌
+
+conclusion: From forward it changes the order of before to after which 
+needs to be maintained from previous sort.
+so better go for backward.s
+

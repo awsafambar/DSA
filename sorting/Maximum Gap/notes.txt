@@ -1,0 +1,13 @@
+in solution1 i used bucket sort but the main issue of not 
+100% fast response is because min value is MAX_SAFE_INTEGER. 
+and it's huge
+
+    const buckets = Array(numberOfBuckets).fill().map(() => ({
+        min: Number.MAX_SAFE_INTEGER,
+        max: -1
+    })); 
+
+    this peice of code is actually also increasing time space.
+
+    could be alot easier if just create two buckets. One for min and one for max
+
