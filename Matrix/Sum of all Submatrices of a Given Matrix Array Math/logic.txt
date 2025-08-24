@@ -1,0 +1,18 @@
+let's take a matrix to understand it.
+
+Taking example of matrix:
+[1 2 3] 
+[4 5 6] 
+[7 8 9]
+
+Let's consider the element 5 at position (1,1) in a 3×3 matrix:
+
+so top left corners submatrix of 5 i.e. (1,1) = 
+        (0,0) to (1,1)[1,2,4,5], (0,1) to (1,1)[2,5], (1,0) to (1,1)[4,5], (1,1)[5] = 4 possibilities
+similarly for bottom-right submatrices of(1,1)= 
+        (1,1) to (2,2)[5,6,8,9], (1,1) to (2,1)[5,8], (1,1) to (1,2)[5,6], (1,1)[5] = 4 possibilities
+
+Total submatrices containing 5: 4×4 = 16 submatrices
+Total contribution of element 5 to the sum: 5×16 = 80 
+
+Now reuse this logic for for each field.

@@ -1,0 +1,6 @@
+1637. Widest Vertical Area Between Two Points Containing No Points
+
+just sort using x axis and find maxGap
+
+128. Longest Consecutive Sequence
+2274. Maximum Consecutive Floors Without Special Floors

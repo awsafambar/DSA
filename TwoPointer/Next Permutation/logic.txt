@@ -1,0 +1,27 @@
+whole Logic is in 3 parts. with an array [4, 5, 3, 6, 2, 1]
+Lemme illustrate the logic with its reason.
+Part 1. Find the first decreasing number from back 
+reason. That elemnt will be the point from where everything on right
+        is already greater. 
+example. Moving left from the end: 1 -> 2 -> 6. Stop!
+        6 is greater than 3. The sequence broke. The element 3 is our pivot.
+        index of 3 is 2 fron front.
+        Because everything to the right of this point is already in its highest 
+        possible order (a descending sequence). To get the next order, we need 
+        to modify the number at this point.
+
+Part 2. Find the next smallest or closest greater number to the value found in part 1 on the right side or back side only
+Reason. Next value would be generated from that value only and it should be from right side.
+example. The first number we find that is larger than 3 is 6. This is the successor.
+        We will swap the pivot (3) with its successor (6).
+
+Part 3. Reverse  or sort the rememaing right elements to come as increasing order or 
+        lowest value for new greater element of part 2.
+Reason. Since a new number is to be generated from next grater element, it should start from lowest so 
+        reverse the remaining part for array on right side.
+example.After the swap, the new suffix is [3, 2, 1]. It is still in descending order.
+        To get the smallest possible value for this new suffix (and thus the very next permutation), 
+        we must reverse it to get it into ascending order.
+        Reversing it gives us [1, 2, 3].
+        The Final Result: [4, 5, 6, 1, 2, 3]
+

@@ -1,0 +1,30 @@
+initialLogic
+part 1: go diagonally till the value less than target till rowLen and colLen
+
+part 2: if m and n equal 
+    check (nextRow,nextCol) === target
+        if yes return true
+    else
+        go through next row 0 to nextRow-1 - recur(binary search)
+            ||
+        go through next col 0 to nextCol-1 - recur(binary search)
+    
+else if (m and n unequal)
+    if(m>n){
+        go through next row 0 to nextRow-1
+    }
+    else
+        go through next col 0 to nextCol-1
+
+
+part 0: write binary search recur function
+
+
+// above logic is flawed for test case like [[1,3,5]]
+
+OPTIMISED LOGIC.
+START FROM ONE LAST ROW OR COLUMN TO FIRST ROW OR COLUMN.
+i.e. row=last, col = 0 and move right and up
+or 
+    row = 0, col= last and move left and down.
+    

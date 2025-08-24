@@ -1,0 +1,66 @@
+var searchMatrix = function(matrix, target) {
+    const rowLen = matrix.length,
+        colLen = matrix[0].length
+
+    let k = 0, isResult = true;
+
+    // part 1
+    while (k < rowLen && k < colLen && matrix[k][k] < target) {
+        k++
+    }
+
+    if (k === rowLen && k === colLen)
+        return false
+
+    const binarySearch = (arr, target, start, end) => {
+        // console.log({ arr, start, end })
+        if (start > end)
+            return false
+
+        const mid = Math.floor((start + end) / 2)
+
+        if (arr[mid] === target)
+            return true
+        else if (arr[mid] > target)
+            return binarySearch(arr, target, start, mid - 1)
+        else
+            return binarySearch(arr, target, mid + 1, end)
+
+    }
+    // console.log({ k })
+    // part 2 
+    if (rowLen === colLen) {
+        if (matrix[k][k] === target)
+            return true
+        else {
+            const rowArr = [], colArr = []
+            for (let i = 0; i < k; i++) {
+                rowArr.push(matrix[k][i])
+                colArr.push(matrix[i][k])
+            }
+            // console.log({ rowArr, colArr })
+            return binarySearch(rowArr, target, 0, k - 1) || binarySearch(colArr, target, 0, k - 1)
+        }
+    }
+
+    // part 3
+    else if (rowLen > colLen) {
+        const rowArr = []
+        for (let i = 0; i < colLen; i++) {
+            rowArr.push(matrix[k][i])
+        }
+        return binarySearch(rowArr, target, 0, colLen - 1)
+
+    }
+
+    else {
+        const colArr = []
+        for (let i = 0; i < rowLen; i++) {
+            colArr.push(matrix[i][k])
+        }
+
+        return binarySearch(colArr, target, 0, rowLen - 1)
+    }
+
+    return false
+}
