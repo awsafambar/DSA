@@ -1,4 +1,4 @@
-space complexity will be decreased as no need of cur array
+//space complexity will be decreased as no need of cur array
 
 /**
  * @param {number[][]} obstacleGrid
