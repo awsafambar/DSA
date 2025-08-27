@@ -1,0 +1,9 @@
+if currentNum + presum < curNum (main thing is if next num is even bigger negative than the preSum then start from that number)
+i.e. suppose presum is -3 and next number is -1. 
+so presum + nextNum = -3 + -1 = -4.
+so better to start preum from -1 only
+    then curNum will be start of preSum.
+    i.e. 
+        presum = Math.max(presum+currentNum, curentNum)
+        maxSum = Math.max(presum,maxSum)
+

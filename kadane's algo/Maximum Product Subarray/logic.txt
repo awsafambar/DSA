@@ -1,0 +1,19 @@
+3 scenarios;
+    if zero exist
+        reset curMul = 1
+    all positive.
+        simply return all product array.
+    if negative exist
+        there could be odd number of - and even who knows
+        so maintain 2 pointers
+        curMinMul, curMaxMul and if zero encountered then follow step 1.
+
+
+Key comparison
+        const supposedMinVal = minCurMul * curNum,
+            supposedMaxVal = maxCurMul * curNum
+
+        minCurMul = Math.min(supposedMinVal, supposedMaxVal, curNum)
+        maxCurMul = Math.max(supposedMinVal, supposedMaxVal, curNum)
+
+

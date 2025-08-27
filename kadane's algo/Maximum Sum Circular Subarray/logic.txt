@@ -1,0 +1,54 @@
+BruteForce Logic.
+    ONE O(N^2) WITH TWO LOOPS AND DOUBLE THE array
+    Keep in mind:
+    both for loop should be from 0 to original length
+    so that inner loop you can calculate till l length from ith position.
+
+
+(most Optimised)Optimised Logic 1 
+    Using Kadane's Algo 
+    Incredible Visualtion.
+        Assume a the array connects back and front so a circle and need to find the max Arc.(continous part of circle with some value)
+        Two option. 
+            arc is anywhere in circle but not in joined part
+            arc is at joined Part.
+        
+            if(not in joined Part)
+                return max Arc
+            
+            if(in Joined Part)
+                visualise as straight the array and become linear.
+                so some part of arc attached at back and some at front.
+                now to find the combined value, you have to find the cicumference of cicle - unnecessary part
+                now unnecessary part here can be further optimised and shortened and it become minPointArc.
+                so now if we do circumference - minPointArc I.E. TotalSum - MinSum. suppose we got an additional Arc in circle.
+                Now find which one is bigger. one who connects back or front or one with minus.
+
+
+    code Logic: calculate MinSum, maxSum, totalSum
+        if maxSum<0
+            return maxSum
+        else
+            Math.max(totalSum-MinSum,maxSum)
+    
+Optimised Logic 2
+    For each index calculate leftPrefixMaxSubArraySum and rightPrefixMaxSubArraySum
+    and then iterate over full array to see left+right which one has highest sum.
+
+    Now above will give you for circular array and for nonCircular Array this can't
+    be exact value as either left or right maxSubArray for an index can be negative so if it's non
+    circular, why add it. So this left and right solely for keeping in mind circular Array 
+
+    so last step Math.max(nonCircularMaxSubArraySum, circularMaxSubArraySum)
+
+    Note:
+    Keep in mind if arr is [5,-3,5]
+
+    maxLeft = [5, 5, 7]
+    maxRight = [7, 5, 5]
+
+    i.e. max between prefixSum + curNum, maxLeft[i-1]
+    also,
+    circularMaxSubArraySum = Math.max(circularMaxSubArraySum, maxLeft[i]+maxRight[i+1]).
+    I+1 IN MaxRight
+    
